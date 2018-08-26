@@ -179,8 +179,8 @@ import io.ktor.server.netty.*
 fun main(args: Array<String>) {
     //io.ktor.server.netty.main(args) // Manually using Netty's DevelopmentEngine
     embeddedServer(
-        Netty, watchPaths = listOf("solutions/exercise4"), port = 8080,
-        module = Application::module
+        Netty,
+        commandLineEnvironment(args)
     ).apply { start(wait = true) 
 }
 
